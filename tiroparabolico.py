@@ -80,6 +80,11 @@ def move():
             targets.append(target)
 
     draw()    # Draw everything.
+    
+    # Return targets that have touched the left border to the right.
+    for target in targets:
+        if not inside(target):
+            target.x += 400    
 
     ontimer(move, 50)    # Define the rate of the game.
 
